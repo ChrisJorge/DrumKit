@@ -7,6 +7,11 @@ for (i = 0; i < document.getElementsByClassName('drum').length; i++)
     });
 }
 
+document.addEventListener('keydown', function(event){
+    let press = event.key
+    sound(press)
+})
+
 
 function sound(key)
 {
