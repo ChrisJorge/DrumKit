@@ -3,13 +3,14 @@ for (i = 0; i < document.getElementsByClassName('drum').length; i++)
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
         let press = this.innerHTML
         sound(press)
-        
+        buttonAnimation(press)
     });
 }
 
 document.addEventListener('keydown', function(event){
     let press = event.key
     sound(press)
+    buttonAnimation(press)
 })
 
 
@@ -49,4 +50,11 @@ function sound(key)
         default:
             break;
     }
+}
+
+function buttonAnimation(key){
+    let current_button = document.querySelector("." + key)
+    current_button.classList.toggle('pressed')
+    setTimeout(function(){current_button.classList.toggle('pressed')}, 100)
+   
 }
